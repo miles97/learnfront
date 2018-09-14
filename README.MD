@@ -1,22 +1,27 @@
 # Html5+CSS(基于bootstrap)
-<br>
-<br>
-### 目前的学习路线大概是从Bootstrap开始，学习主要的设计思路以及响应式布局思想。
+<br> 
+<br> 
+## 目前的学习路线大概是从Bootstrap开始，学习主要的设计思路以及响应式布局思想。
 
 ### 之后的中心会转到从流行的JS框架到原生JS方向，加深理解。
 
 ### 最后会花重心理解前端性能优化的相关内容。
-<br>
+<br> 
+
 # Jquery梗概
-<br>
-<br>
+<br> 
+<br> 
+
 # Vue以及AngularJS梗概笔记
-<br>
-<br>
+<br> 
+<br> 
+
 # 原生JS学习路线
-<br>
-<br>
+<br> 
+<br> 
+
 # 浏览器性能优化
-<br>
-<br>
+<br> 
+<br> 
+
 # ES6标准，浏览器兼容性，W3C标准，XHTML,WHATWG标准
