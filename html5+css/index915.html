@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>daythree</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+   </head>
+   <body style="-webkit-column-count:2;font-family:>
+
+   	<div class="jumbotron text-center" style="margin-bottom:0;-webkit-column-span:all;	">
+	<h2>这是学习bootstrap的第三天</h2>
+	  <!-- <p>重置浏览器窗口大小查看效果！</p>  -->
+	</div>
+	
+
+	<div class="container" style="margin-left: 10em;">
+
+		<div style="-webkit-column-span:all;padding-left:10em;">
+		<ul class="pager">
+			<li class="previous"><a href="#">&larr; 上一页</a></li>
+			<li class="next"><a href="#">下一页&rarr;</a></li>
+		</ul>
+		</div>
+
+	<button class="btn btn-primary btn-lg" >原始按钮</button>
+	<br>
+	<br>
+	<button class="btn btn-danger btn-sm " >危险按钮</button>
+	<!-- 另外还有info 以及success和default link。 -->
+	<!-- btn-lg,sm,xs,btn-block -->
+	<!-- active激活属性。禁用按钮，disabled="disabled" -->
+	<br>
+	<br>
+	<div >
+		<a href="" class="btn btn-primary btn-lg disabled" role="button">禁用的链接</a>
+	</div><br>
+		<!-- 使用链接-->
+		<div>
+			<a href="#" class="btn btn-default "role="button">链接</a>
+			<button class="btn btn-default" type="submit">按钮</button>
+			<input type="button" class="btn btn-default" value="输入">
+			<input type="submit" class="btn btn-default" value="提交"><br>
+			<code>&lt!-- 这里的意思是其实都可以按钮但是为了防止跨浏览器的不一致问题，统一最好都用button --&gt</code>
+		</div><br></br>
+		<div class="text-primary">
+		<label for="" >按钮组</label>
+		</div>
+		<code>&lt!-- 通过控制按钮组里面的按钮来调整整个按钮组的大小，lg,sm,xs --&gt</code><br>
+		<div class="btn-group btn-group-lg">
+			<button class="btn btn-primary">iPhoneXr</button>
+			<button class="btn btn-primary">iPhoneX</button>
+			<button class="btn btn-primary">iPhoneXsMax</button>
+		</div><br><br>	
+
+		<code>&lt!-- 通过控制vertical设置垂直方向的按钮组 --&gt</code><br>
+		<code>&lt!-- 通过控制按钮组里面btn-group-justified设置自适应大小的按钮组</code><br>
+		<div class="btn-group-vertical btn-group-lg">
+			<button class="btn btn-primary">我买</button>
+			<button class="btn btn-primary">iPhoneX</button>
+			<button class="btn btn-primary">嘻嘻</button>
+		</div><br>
+		<label for="" >内嵌按钮组</label><br><br>
+		<div class="btn-group">
+			<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">dammy
+				<span class="caret"></span></button>
+			<ul class="dropdown-menu" role="menu"> 
+				<li><a href="#">shity</a></li>
+				<li><a href="#">asshole</a></li>
+			</ul>
+		</div>
+		<!-- 分割按钮略过 ，其实就是用btn-group-->
+		<div class="img" style="overflow: auto;">
+
+		<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537007080062&di=d62e8c091f3d70962620edc72ef5267c&imgtype=0&src=http%3A%2F%2Feasyread.ph.126.net%2FKSzgyo_N-_fz-_O-TAz5QQ%3D%3D%2F8796093022567529198.jpg" alt="扫码支持大学生创业hhhh" class="img-circle" style="height: 50em; float:left;">
+		<!-- rounded获得图片圆角。thumbnail添加一个内边距以及灰色的边框，responsive表示一个响应式的图片 -->
+		<br clear="all">
+
+		<!-- 清除浮动的多种方式之一 -->
+
+		<label for="" style="background-color: grey;font-size: 2em;color: white;">这是一个圆形的图片</label>
+		</div>
+</div>
+
+<div style="-webkit-column-span:all;margin: 5em;">
+<pre style="color: white;background-color: black;">
+	&lt!-- 
+	现在的问题是怎么解决整体布局的问题以及元素之间的奇妙关系，像是float和其他的样式之间的联系。
+	还有的就是保存一些整体的网站布局格式，导航栏菜单分栏以及传统HTML布局中的head,menu,content,footer等。
+	以及什么时候需要用到清除浮动，并且不会影响布局的操作。
+	最后的还是响应式布局的问题。包括自己定制设备的一些原则
+	还有MVC等一些框架的深层次理解，不然感觉个人的代码规范还是很需要后期的改正以及一些嵌套的使用，label等为什么经常需要div标签嵌套进去
+	 --&gt 
+
+</pre>
+</div>
+
+<br>
+<br>
+<br>
+<div class="jumbotron text-center" style="margin-bottom:0;-webkit-column-span:all;">
+  <p>版权所有copyright</p>
+  <p>E-mail:xiaokeaicg@hotmail.com</p>
+ 
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </body>
+</html>
