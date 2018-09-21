@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./vue.js"></script>
+</head>
+<body>
+
+<div id="root">
+ NAME:<input v-model="firstName">
+LAST:<input v-model="lastName">
+<div>{{fullName}}</div>
+<div>{{count}}</div>
+</div>
+
+<script>
+	new Vue({
+		el:"#root",
+		data:{
+			firstName: '',
+			lastName: '',
+			count: 0
+		},
+		// react what is it?
+		computed:{
+			fullName: function(){
+				return this.firstName + '  ' +	this.lastName
+
+			}
+		},
+		watch:{
+			
+			fullName: function(){
+				this.count ++
+			}
+		}	
+	})
+</script>
+</body>
+</html>

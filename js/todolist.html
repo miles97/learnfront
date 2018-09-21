@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./vue.js"></script>
+</head>
+<body>
+
+<div id="root">
+	<div>
+		<input v-model="inputValue"/>
+	
+	<button @click="handleSubmit">submit</button>
+</div>
+
+<ul>
+	<li v-for="(item, index) of list" :key="index">
+	{{item}}
+</li>
+</ul>
+</div>
+<script>
+	new Vue({
+		el:"#root",
+		data:{
+			inputValue: '',
+			list: []
+		},
+		methods:{
+			handleSubmit: function() {
+				this.list.push(this.inputValue)
+				this.inputValue = 
+			}
+		}
+	})
+</script>
+</body>
+</html>

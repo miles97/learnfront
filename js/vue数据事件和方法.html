@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./vue.js"></script>
+</head>
+<body>
+	<!-- xixihaha -->
+
+<div id="root">
+<div @click="handleClick">{{content}}</div>
+</div>
+<script>
+	new Vue({
+		el:"#root",
+		data:{
+			 content: "hello"
+		},
+		methods:{
+			handleClick:function(){
+				this.content = "world" 
+			}
+		}
+
+	})
+</script>
+</body>
+</html>
