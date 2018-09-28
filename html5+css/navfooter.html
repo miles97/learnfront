@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Define a description for better SEO result -->
+<title>响应式布局</title>	
+<style type="text/css">
+
+div>ul {
+	list-style-type: none;
+	margin:0;
+	padding: 0;
+    overflow: hidden;
+}
+.head {
+	display: flex;
+	border: 2px dashed black;
+	margin-bottom: 50px;
+	background-color: #333;
+	/*为什么只能在head里设置背景颜色而ul和navbar不能设置*/
+}
+
+/*@media all and(min-width: 600px){
+
+}*/
+/*.navbar{
+	background-color: #f1f1f1;
+}*/
+.navbar ul{
+
+}
+.navbar li {
+	    float: left;
+}
+.navbar li a {
+    display: block;
+    color: gray;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.navbar li a:hover {
+    background-color: #555;
+    color: white;
+}
+.footer{
+	display: -webkit-box;
+  	display: flex;
+  	padding-top: 45px;
+  	padding-bottom: 45px;
+  	flex-wrap: wrap;
+  /*border-top: 1px solid #eee;*/
+  /*this one 可以取代hr,因为设置了内联元素所以这里不管用了嘻嘻*/
+
+
+  /*overflow: hidden;*/
+  }
+
+.footer-list-wrap {
+	
+
+ 	flex-grow: 0;
+ 	 /*这个的意思是子元素如何分配父元素的空间，默认是0不分配*/
+ 	flex-wrap: wrap;
+ 	display: -webkit-box;
+ 	/*当然,弹性盒子也可以同一列展示,修改display变成flex,修改flex-warp变成flex.就可以不弹性了，，以上见解暂时有误。
+ 	修改Body 里面direction 属性为 rtl (right-to-left),弹性子元素的排列方式也会改变，页面布局也跟着改变123->321*/
+  	display: flex;
+  	-webkit-box-flex: 2;
+ 	/*well well well以上就是弹性盒子的内容啦,如果想要相反可以用wrap-reverse
+ 	1   23  变成   3   12*/
+
+	/*flex-direction: row | row-reverse | column | column-reverse*/
+
+ 	/*margin-right: 0;*/
+
+}
+/*@media (min-width: 641px) {
+	.footer-list-wrap {
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    }
+  }*/
+div ul li{
+	line-height: 2.3;
+}
+div ul li a{
+	text-decoration: none;
+	color:gray;
+}
+</style>
+
+</head>
+<body>
+
+<div class="head" >
+<div class="navbar" >
+	<ul>
+		<li><a href="">吃饭</a></li>
+		<li><a href="">睡觉</a></li>
+		<li><a href="">打豆豆</a></li>
+	</ul>
+</div>
+</div>
+	<!-- 兄弟们今天模仿一个Mobike的footer 
+		有很多问题，比如哦响应式的这个列表，通过适应设备然后更改方向还是一个问题，之后的一些问题也不知道怎么解决，对其楼上
+	其实前端切图的真正工作量在css代码的编写上，真的对于h5并没有什么好研究的，现阶段的代码规范很差，很喜欢写在内联样式里面。
+	-->
+<div class="footer" style="border: 1px dotted red;">
+ <ul class="main-links" style=" margin-right: 40px;
+  -webkit-box-flex: 2;
+  flex-grow: 2;">
+     <li><a href="/" class="font-logo" style="background-image: url(&#39;/cn/assets/themes/moby/img/logo-text.svg&#39;)">Mobike</a></li>
+     <li>Beijing Mobike Technology Co., Ltd</li>
+     <li>客服电话 <a href="tel:400-811-7799">400-811-7799</a></li>
+      <li>北京摩拜科技有限公司</li>
+ </ul>                                      
+                
+<div class="footer-list-wrap" style="border: 1px dotted blue;">
+
+<div class="product" style="border: 1px dotted gray;">
+ <ul >	
+ 	<h3>产品</h3>
+ 	<li>智能锁</li>
+ 	<li>轻骑班</li>
+ 	<li>经典版</li>
+
+ </ul>
+ </div>
+ <div class="about" style="border: 1px dotted gray;"> 
+ 	<ul style="">	
+ 	<h3>关于</h3>
+ 	<li><a href="">加入mobike</a></li>
+ 	<li><a href="">关于我们</a></li>
+ 	<li><a href="">联系我们</a></li>
+ 	<li>服务协议</li>
+ </ul>
+</div>
+<div class="media" style="border: 1px dotted gray;">
+ <ul >
+ 	<H3>社交网络</H3>
+ 	<li>微博</li>
+ 	<li>微信</li>
+ 	<li>知乎专栏</li>
+ 	<li>Facebook</li>
+ </ul>
+ </div>
+</div>
+ </div>
+</body>
+
+</html>
