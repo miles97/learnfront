@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Bootstrap 模板</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+   </head>
+   <body>
+	<style type="text/css">
+
+	.left{
+		width: 100%;
+		border: 1px solid black;
+
+	}
+		.hover_font{
+			opacity: 0;
+			text-align: center;
+			clear: both;
+		}
+		.left a:hover .hover_font{
+			opacity: 1;
+			position: absolute;
+			top:0;
+			left:0;
+			vertical-align: center;
+			color: white;
+			font-size: 3em;
+		}
+	</style>
+
+
+	<div class="left">
+		<div class="img"><a href="#"><img src="img/logo.png" alt=""><p class="hover_font">hello</p></a></div>
+	</div>
+
+
+
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+   </body>
+</html>

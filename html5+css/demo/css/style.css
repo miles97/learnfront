@@ -1,0 +1,157 @@
+ 	*{
+ 		margin: 0;
+ 		padding: 0;
+		text-decoration: none;
+		color: black;
+ 	}
+ 	nav{
+ 		background-color: rgba(0,0,0,.9);
+ 		/*text-align: center;*/
+ 	}
+ 	nav ul li{
+ 		display: inline-block;
+ 		font-size: 2em;
+ 		padding-top: 1em;
+ 		padding-left: 5%;
+
+ 	}
+	.container{
+		display: block;
+		background-color:black;
+		height: 12%;
+	}
+	.container h1{
+		color:white;
+	}
+	h1:before {
+		content:url(../img/logo.png);
+		/*暂时不知道为什么不能使用background插入图片0.0。*/
+	}
+
+/*以下是banner的代码*/
+#banner {width:50%; height:auto; overflow:hidden; margin:auto; border: 1px solid black; } @media screen and (max-width: 812px){#banner {width: 100%; } } .bannerbk{width: 100%; background-color: black; /*opacity: .5;*/ } @media screen and (max-width: 812px){.bannerbk {background-color: white; } } .banner {width:400%; height:100%; animation:banner 10s ease infinite; } .banner1,.banner2,.banner3 {width:25%; height:100%; overflow:hidden; float:left; } .banner1 img,.banner2 img,.banner3 img {width:100%; height:100%; position:relative; } @keyframes banner {0% {margin-left:0px; } 34% {margin-left:0px; } 39% {margin-left:-100%; } 64% {margin-left:-100%; } 69% {margin-left:-200%; } 94% {margin-left:-200%; } 99% {margin-left:-300%; } 100% {margin-left:-300%; } }
+
+.main{
+	padding-top: 8%;
+	width: 90%;
+	/*border: 2px dashed red;*/
+	overflow: hidden;
+	margin:auto;
+}
+
+.left{
+	/*display: inline-block;*/
+	float: left;
+	width: 30%;
+	/*border: 1px solid black;*/
+	display: block;
+	text-align: center;
+}
+
+@media screen and (max-width: 812px){
+	.left {
+		width: 100%;
+		float: left;
+	}
+}
+
+.left img{
+	border-radius: 50%;
+}
+
+.left:after{
+	content: "";
+	 height: 0px; visibility: hidden;
+ clear: both; display: block; 
+}
+/*.left1 img:hover p{
+	content: "O_LOVE"；
+	color：white;
+	text-shadow: 1px 2px 3px gray;
+}*/
+.hover_font{text-align: center;
+clear: both;color: black;
+   opacity:0;
+    filter:alpha(opacity=0); -webkit-transition: all 0.5s;
+     -o-transition: all 0.5s; transition: all 0.5s;}
+
+.left a:hover .hover_font{
+		opacity: 1;
+	  filter:alpha(opacity=1);
+}
+.left1{
+	float: left;
+	padding-left: 10%;
+/*border: 1px solid black;*/
+}
+
+
+.left2{
+	float: right;
+	padding-right: 10%;
+/*border: 1px solid black;*/
+}
+
+.left3{
+	float:right;
+	padding-right: 10%;
+	/*border: 1px solid red;*/
+}
+
+.left4{
+	float: left;
+	padding-left: 10%;
+	/*border: 1px solid black;*/
+}
+
+.content {	
+	margin-left: 1%;
+	float: left;
+	/*border: 1px solid black;*/
+	width: 50%;
+}
+@media screen and (max-width: 812px){
+	.content{
+		width: 100%;
+	}
+}
+.right{
+	flex: 1;
+}
+.right h2{
+	text-shadow: 1px 2px 3px gray;
+}
+.right p {
+	padding-top: 1%;
+	text-shadow: 0px 0px 0px black;	
+}
+@media screen and (max-width: 812px){
+	.left1,.left2,.left3,.left4{
+		width: 45%;
+		margin: 0;
+		padding:0;
+	}
+}
+@media screen and (max-width: 812px){
+	.left img{
+		width:100%;
+	}
+
+}
+
+footer{background-color:#000;width:100%;color:white;text-align:center;padding:30px 0;
+}
+
+footer ul{
+	color:white;
+}
+footer ul li{
+	list-style: none;
+	display: inline-block;
+
+}
+.foot-link a{color:#999999; text-decoration:none;}
+.foot-link a:hover{color:#fff; text-decoration:none;}
+.copyright p,a{
+	color:#999999;
+}
