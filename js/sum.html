@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS计算器</title>
+</head>
+<body>
+<!-- 组件之间的通讯 -->
+<div>
+	<span>第一个数字<input type="text" id="first"></span><br>
+	<span>第二个数字<input type="text" id="second"></span><br>
+	<button  onclick="add()">加法</button><br>
+	<!-- Onclick绑定add()函数 -->
+	<button  onclick="subtract()">减法</button><br>
+	<!-- 乘法除法同理，就是 / *的区别吖 -->
+	<p id="res"></p>
+</div>
+
+<script>
+	//传递第一个数字
+	function getNum1(){
+		var num1=document.getElementById("first").value;
+		return num1;
+	}
+	//第二个数字
+		function getNum2(){
+		var num2=document.getElementById("second").value;
+		return num2;
+	}
+	//加法
+	function add(){
+		var a =getNum1();
+		var b = getNum2();
+		var re=Number(a)+Number(b);
+		sendResult(re);
+	}
+	//减法
+		function subtract(){
+		var a =getNum1();
+		var b = getNum2();
+		var re=a-b;
+		sendResult(re);
+		// 返回指定数值到re
+	}
+	//定义result
+	function sendResult(re_1){
+		var num=document.getElementById('res');
+		// 获取id
+		num.innerHTML=re_1;
+		// 写入文档流
+	}
+</script>
+</body>
+</html>
