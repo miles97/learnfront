@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建foo</title>
+</head>
+<body>
+	<button onclick="myFunction()">点击这里</button>
+	<p id="demo"></p>
+	<button onclick="time()">看看几点啦</button>
+	<p id="demo2"></p>
+	<input type="text" id="tt">嘻嘻，我是假的双向数据绑定，下面的是真的
+	<p id="show"></p>
+
+	<input type="text" id="aa"/>
+<span id="bb">{{hello}}</span>
+<script type="text/javascript">
+	function myFunction()
+	{
+		text1="what a beautiful";
+		text2="fool";
+		text4=text1+" "+" <br>"+text2;
+		document.getElementById('demo').innerHTML=text4;
+	}//空格的问题就是HTML会压缩空格
+	function time(){
+
+
+	var d=new Date();
+	var time = d.getHours();
+	// document.write();
+	// 使用document.write的问题就是会影响某些布局，通过改变元素写入文档流的样式，innerHTML浏览器交互效果更佳好
+
+	document.getElementById("demo2").innerHTML=("现在是"+time+""+"点啦");
+	}
+	//可以考虑通过if else来根据时间给出不同的时间
+
+	//使用JS写出一个双向数据绑定的实例。。以下是我的愚蠢想法。结果实现不了。
+
+	// document.write(t);
+
+	// var t=document.getElementById("tt").value;
+
+	//网络大哥的实例
+
+	    var obj = {};
+    Object.defineProperty(obj,'hello',{
+        set:function(val){
+            document.getElementById('bb').innerHTML = val;
+            document.getElementById('aa').value = val;
+        }
+    });
+    document.getElementById('aa').onkeyup = function(e){
+        obj.hello = e.target.value;
+    };
+    obj.hello = "";
+
+  // 随机数测试
+  // 随机生成1-100的正整数 
+  document.write("<br>");
+  document.write(Math.floor(Math.random()*100+1));
+  document.write("下面是10个随机数"+"<br>");
+
+ // 产生10个[20,50]的随机数
+
+ 	for (var i =0; i < 10; i++) {
+ 		console.log(Math.floor(Math.random() * (50 - 20+ 1)+ 20));
+ 		document.write(Math.floor(Math.random() * (50 - 20+ 1)+ 20)+'&nbsp;');
+ 		
+ 	}
+</script>
+</body>
+</html>
