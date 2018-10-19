@@ -1,0 +1,249 @@
+﻿         *{
+            /*list-style: none;*/
+            text-decoration: none;
+            color: black;
+            margin:0;
+            padding: 0;
+         }
+         a{
+            color: black;
+         }
+         a:hover{
+            text-decoration: none;
+         }
+         header{
+   			overflow: hidden;
+   			background-color: skyblue;
+            
+   		}
+   		.logo{
+   		display: inline-block;
+   		float: left;
+			margin: 1em 4em;
+			position: relative;
+			left: 15%;
+   		}
+   		nav ul{
+   			margin-left: 8em;
+   			position: relative;
+   			left: 25%;
+   		}
+   		nav ul li{
+   			display: inline-block;
+   			padding: 4em 2em;
+   			float: left;
+   		}
+ 
+   		.content{
+   			vertical-align: middle;
+   			text-align: center;
+   			background-color: skyblue;
+   			overflow: hidden;
+   		}
+   		.content h1{
+   			font-size: 4em;
+   		}
+   		.content .img{
+   			margin-top: 4em;
+
+   		}
+
+   		.content2{
+   			overflow: hidden;
+
+   		}
+   		/*这里的布局有点问题，所以table-cell*/
+   		.content2 .imgs{
+   			width: 50%;
+   			margin: auto;
+   			/*border: 1px solid black;*/
+   			display: table;
+   			padding: 4em 0;
+   		}
+   		.content2 .ps{
+   			/*float: left;
+   			word-break: all;
+   			width: 33%;*/
+   			display: table-cell;
+   			width: 30%;
+   			text-align: center;
+   			padding: 0 2em;
+   		}
+		.content2 .xd{
+			display: table-cell;
+			width: 30%;
+			text-align: center;
+			padding: 0 2em;
+		}
+		.content2 .sketch{
+			display: table-cell;
+			width: 30%;
+			text-align: center;
+			padding: 0 2em;
+		}
+		.content2 h2{
+			color:skyblue;
+		}
+		.content2 p{
+			/*word-break: brea*/
+		}
+
+		.content3{
+			width: 100%;
+			height: 100%;
+			background-color: rgba(128,138,135,.1);
+         /*overflow: hidden;*/
+         /*display: relative;*/
+		}
+		.content3 .head{
+			text-align: center;
+		}
+		.content3 .main{
+         display:table;
+         /*border: 1px solid black;*/
+         /*position: relative;*/
+         width: 100%;
+         overflow: hidden;
+      }
+      /*.content3 p{
+         width: 50%;
+      }*/
+      .content3 .left{
+         /*vertical-align: middle;*/
+         /*display: table-cell;*/
+         /*width: 100%;*/
+         /*border: 1px solid red;*/
+         text-align: right;
+         clear: both;
+         position: relative;
+         /*vertical-align: middle;*/
+         margin: auto 0;
+         /*padding: 4em 1em;*/
+         display: table-cell;
+         vertical-align: middle;
+         /*justify-content: center;*/
+         
+      }
+      .content3 .left .left_dec1{
+         /*border: 1px solid blue;*/
+         padding: 1em 1em;
+      }
+       .content3 .left .left_dec2{
+         /*border: 1px solid blue;*/
+         padding: 1em 1em;
+      }
+      .content3 .img{
+         /*display:table-cell;*/
+         /*border: 1px solid black;*/
+     /*    width: 30%;*/
+         /*align-items: center;*/
+         margin: auto;
+         /*align-content: center;*/
+         text-align: center;
+         vertical-align: middle;
+        display: table-cell;
+      }
+      
+      .content3 .right{
+         /*display:inline-block;*/
+         vertical-align: middle;
+         text-align: left;
+         /*justify-content: center;*/
+         display: table-cell;
+      }
+      .content3 .right_dec1{
+          /*border: 1px solid blue;*/
+         padding: 1em 1em;
+      }
+      .content3 .right_dec2{
+          /*border: 1px solid blue;*/
+         padding: 1em 1em;
+      }
+      .content3 .right_dec3{
+          /*border: 1px solid blue;*/
+         padding: 1em 1em;
+      }
+      .content4{
+         /*display: block;*/
+         /*overflow: hidden;*/
+         /*margin: auto;*/
+         /*border: 1px solid black;*/
+         /*width: 100%;*/
+         border-bottom: 1px solid #999999;
+      }
+      .content4 .main{
+         margin:auto;
+         padding: 1em;
+         /*border: 1px solid red;*/
+         width:70em;
+         display: block;
+         overflow: hidden;
+         position: relative;
+      }
+      .content4 .img{
+         float: left;
+         /*text-align: center;*/
+         display: block;
+      }
+      .content4 .text{
+         padding-top: 10%;
+         padding-left: 3%;
+         float: left;
+         display: block;
+          width: 50%;
+         /*border: 1px solid red;*/
+         vertical-align: middle;
+         margin: auto 0;
+         /*align-content: center;*/
+      }
+      .content5{
+         /*display: block;*/
+         /*overflow: hidden;*/
+         /*margin: auto;*/
+         /*border: 1px solid black;*/
+         /*width: 100%;*/
+         border-bottom: 1px solid #999999;
+      }
+      .content5 .main{
+         margin:auto;
+         padding: 1em;
+         /*border: 1px solid red;*/
+         width:70em;
+         display: block;
+         overflow: hidden;
+         position: relative;
+      }
+      .content5 .img{
+         float: left;
+         /*text-align: center;*/
+         display: block;
+      }
+      .content5 .text{
+         padding-top: 10%;
+         padding-right: 3%;
+         float: left;
+         display: block;
+          width: 50%;
+         /*border: 1px solid red;*/
+         vertical-align: middle;
+         text-align: right;
+         margin: auto 0;
+         /*align-content: center;*/
+      }
+      .content6 .head{
+         text-align: center;
+         margin-bottom:5%;
+      }
+      .content6 .table-responsive{
+         width: 50%;
+         margin: auto;
+      }
+      footer{
+         background: rgba(124,124,124,.6);
+         height: 50%;
+      }
+      footer .copyright{
+         padding: 2em;
+         text-align: center;
+         text-decoration: none;
+      }

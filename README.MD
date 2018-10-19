@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-#learnfront 
-=======
-# Html5+CSS(基于bootstrap)
+﻿# Html5+CSS(基于bootstrap)
 <br> 
 <br> 
 ## 目前的学习路线大概是从Bootstrap开始，学习主要的设计思路以及响应式布局思想。
@@ -28,4 +25,4 @@
 <br> 
 
 # ES6标准，浏览器兼容性，W3C标准，XHTML,WHATWG标准
->>>>>>> 3af9af4d876b5fcda066c56501e9683086c54b7e
+
