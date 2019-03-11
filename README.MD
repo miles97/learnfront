@@ -12,7 +12,7 @@
 <br> 
 <br> 
 
-# Vue以及AngularJS梗概笔记
+# Vue以及Angular梗概笔记
 <br> 
 <br> 
 
@@ -28,3 +28,5 @@
 
 # 以上纯为扯淡
 
+
+### 关于单项数据绑定的React
