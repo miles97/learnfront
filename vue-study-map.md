@@ -181,3 +181,175 @@ routes: [
         <router-view></router-view>
     </div>
 ```
+
+## 使用组件化方法的mint-Ul
+
+## 页面标签
+
+### 按需加载
+```java
+import {Header,Toast,Field,Button,Indicator} from 'mint-ui';
+```
+### 页面公用方法在main.js中引入
+goback&&tourl等
+
+其他组件定义可以在components内自定义名称
+
+## 代码逻辑（多页面管理）vuex
+实际上的使用还不是很清楚
+
+大概就是放置了五个原生方法，然后组件通过mapState函数进行使用
+
+#### mapState辅助方法
+```javascript
+import { mapState } from 'vuex'
+
+export default {
+    computed: mapState ({
+        count: state => state.count,
+        countAlias: 'count',    // 别名 `count` 等价于 state => state.count
+    })
+}
+```
+其他同时也可以放一下公用方法
+
+### 关于State、Getter、Muataion、Action、Module的作用问题
+
+#### Getter
+```
+如果我们需要对state对象进行做处理计算，如下：
+
+computed: {
+    doneTodosCount () {
+        return this.$store.state.todos.filter(todo => todo.done).length
+    }
+}
+如果多个组件都要进行这样的处理，那么就要在多个组件中复制该函数。这样是很没有效率的事情，当这个处理过程更改了，还有在多个组件中进行同样的更改，这就更加不易于维护。
+
+Vuex中getters对象，可以方便我们在store中做集中的处理。Getters接受state作为第一个参数：
+
+const store = new Vuex.Store({
+  state: {
+    todos: [
+      { id: 1, text: '...', done: true },
+      { id: 2, text: '...', done: false }
+    ]
+  },
+  getters: {
+    doneTodos: state => {
+      return state.todos.filter(todo => todo.done)
+    }
+  }
+})
+在Vue中通过store.getters对象调用。
+
+computed: {
+  doneTodos () {
+    return this.$store.getters.doneTodos
+  }
+}
+Getter也可以接受其他getters作为第二个参数：
+
+getters: {
+  doneTodos: state => {
+      return state.todos.filter(todo => todo.done)
+  },
+  doneTodosCount: (state, getters) => {
+    return getters.doneTodos.length
+  }
+}
+```
+就是在getter里面是一些计算属性的公用方法，通过在vuex里面的状态注册之后可以进行所有页面的访问引用，完成组件化的思想以及实现。
+与一般的公用方法不同的是，getter的效率更高而且有一些特定方式访问，并且可以多个参数进行调用。
+
+#### [mapGetters辅助函数](https://juejin.im/entry/58cb4c36b123db00532076a2)
+
+略过
+
+#### Mutations
+
+vuex中唯一用来更改state中的状态的方法
+
+每一个mutation都有一个事件类型type和一个回调函数handler
+```
+
+const store = new Vuex.Store({
+  state: {
+    count: 1
+  },
+  mutations: {
+    increment (state) {
+      // 变更状态
+      state.count++
+    }
+  }
+})
+```
+```
+调用mutation，需要通过store.commit方法调用mutation type：
+store.commit('increment')
+```
+
+##### Payload 提交载荷
+也可以向store.commit传入第二参数，也就是mutation的payload:
+```
+mutaion: {
+    increment (state, n) {
+        state.count += n;
+    }
+}
+
+store.commit('increment', 10);
+```
+
+```
+不例外，mutations也有映射函数mapMutations，帮助我们简化代码，使用mapMutations辅助函数将组件中的methods映射为store.commit调用。
+
+import { mapMutations } from 'vuex'
+
+export default {
+  // ...
+  methods: {
+    ...mapMutations([
+      'increment' // 映射 this.increment() 为 this.$store.commit('increment')
+    ]),
+    ...mapMutations({
+      add: 'increment' // 映射 this.add() 为 this.$store.commit('increment')
+    })
+  }
+}
+注 Mutations必须是同步函数。
+
+如果我们需要异步操作，Mutations就不能满足我们需求了，这时候我们就需要Actions了
+
+```
+
+### Action
+分发 Action
+Action 通过 store.dispatch 方法触发：
+```
+store.dispatch('increment')
+
+ mutation 必须同步执行,而action 内部执行异步操作：
+
+actions: {
+  incrementAsync ({ commit }) {
+    setTimeout(() => {
+      commit('increment')
+    }, 1000)
+  }
+}
+```
+### VueX独立模块
+
+如果想要独立store中的其他方法，也可以通过创建index.js引入相应文件进行
+```
+import Vue from 'vue'
+import Vuex from 'vuex'
+import mutations from './mutations'
+import actions from './action'
+import getters from './getters'
+```
+最后将接口暴露出来，进行调用。state还是不变，在index.js中进行声明。
+
+### 其他内容
