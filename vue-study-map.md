@@ -59,8 +59,10 @@
 <button v-on:click.once="doThis"></button>
 <!-- 对象语法 (2.4.0+) -->
 <button v-on="{ mousedown: doThis, mouseup: doThat }"></button>
+
 ```
 ### 在子组件上监听自定义事件 (当子组件触发“my-event”时将调用事件处理器)：
+
 ```
 <my-component @my-event="handleThis"></my-component>
 
@@ -72,6 +74,7 @@
 
 
 ```
+
 ### [事件处理器](https://cn.vuejs.org/v2/guide/events.html)
 
 有时也需要在内联语句处理器中访问原始的 DOM 事件。可以用特殊变量 $event 把它传入方法：
@@ -113,8 +116,9 @@ methods: {
 所以所有的prop都是单项数据流的。
 
 
-```bash
-所有的prop都使得其父子prop之间形成了一个单向下行绑定：父级prop的更新会向下流动到子组件中，但是反过来则不行。这样会防止从子组件意外改变父级组件的状态，从而导致你的应用的数据流向难以理解。
+```
+所有的prop都使得其父子prop之间形成了一个单向下行绑定：父级prop的更新会向下流动到子组件
+中，但是反过来则不行。这样会防止从子组件意外改变父级组件的状态，从而导致你的应用的数据流向难以理解。
 
 
 父组件在调用子组件时用v-on把事件传给子组件，子组件用this.$emit调用父组件传过来的事件。
@@ -122,7 +126,7 @@ methods: {
 
 ### 绑定class  {active : isActive},以及绑定props子父组件传参
 
-·在对象当中，CSS 的属性名要用驼峰式表达：fontSize 解析成 font-size
+·在对象当中，CSS 的属性名要用驼峰式表达：fontSize解析成font-size
 
 ```
 <button class="licenses-button" :disabled="disabled" :style="stylecss" @click="callLicenses">{{keyText}}</button>
@@ -196,6 +200,7 @@ goback&&tourl等
 其他组件定义可以在components内自定义名称
 
 ## 代码逻辑（多页面管理）vuex
+
 实际上的使用还不是很清楚
 
 大概就是放置了五个原生方法，然后组件通过mapState函数进行使用
@@ -224,6 +229,7 @@ computed: {
         return this.$store.state.todos.filter(todo => todo.done).length
     }
 }
+
 如果多个组件都要进行这样的处理，那么就要在多个组件中复制该函数。这样是很没有效率的事情，当这个处理过程更改了，还有在多个组件中进行同样的更改，这就更加不易于维护。
 
 Vuex中getters对象，可以方便我们在store中做集中的处理。Getters接受state作为第一个参数：
@@ -241,6 +247,7 @@ const store = new Vuex.Store({
     }
   }
 })
+
 在Vue中通过store.getters对象调用。
 
 computed: {
@@ -248,6 +255,7 @@ computed: {
     return this.$store.getters.doneTodos
   }
 }
+
 Getter也可以接受其他getters作为第二个参数：
 
 getters: {
@@ -259,6 +267,7 @@ getters: {
   }
 }
 ```
+
 就是在getter里面是一些计算属性的公用方法，通过在vuex里面的状态注册之后可以进行所有页面的访问引用，完成组件化的思想以及实现。
 与一般的公用方法不同的是，getter的效率更高而且有一些特定方式访问，并且可以多个参数进行调用。
 
@@ -353,3 +362,6 @@ import getters from './getters'
 最后将接口暴露出来，进行调用。state还是不变，在index.js中进行声明。
 
 ### 其他内容
+
+[前端性能优化](https://segmentfault.com/a/1190000018263418)
+
