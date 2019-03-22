@@ -1,4 +1,4 @@
-## Vue原生项目研究小结
+﻿## Vue原生项目研究小结
 
 ### 之前自己的逻辑都是通过模仿页面实现，然后请求接口完成。
 
@@ -365,3 +365,4 @@ import getters from './getters'
 
 [前端性能优化](https://segmentfault.com/a/1190000018263418)
 
+## js基础语法ES6
