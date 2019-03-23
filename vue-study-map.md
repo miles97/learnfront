@@ -366,3 +366,5 @@ import getters from './getters'
 [前端性能优化](https://segmentfault.com/a/1190000018263418)
 
 ## js基础语法ES6
+
+## ES2015新规范
