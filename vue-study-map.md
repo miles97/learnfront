@@ -368,3 +368,5 @@ import getters from './getters'
 ## js基础语法ES6
 
 ## ES2015新规范
+
+[前端面试题 VUE](https://segmentfault.com/a/1190000018634744)
