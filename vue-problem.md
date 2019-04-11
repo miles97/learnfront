@@ -63,3 +63,56 @@ changePage(index){
 门店筛选：选择查看具体门店数据
 点击“指标名称”，进行隐藏和显示
 统计时间筛选：选择查看数据的时间范围，默认当月
+
+## v-for 渲染
+
+渲染value  item in list{{item}}
+
+渲染带index的value item,index in list   {{index}}  {{value}}
+
+渲染key  (item,key) in list {{key}} {{value}}
+
+如果需要条件从json里面筛选数据，即可直接从v-if=""表达式内完成筛选，不需要js处理数据
+
+### 处理较长的字符串
+```
+overflow-x: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+ ```
+
+## 关于h5的基础问题
+
+太多了 特别是关于渲染当中的div ul li使用
+
+i span 等常用小标签的使用
+
+还有定位posion,以及float的滥用问题
+
+### router.js  
+
+路由#产生的原因：http://127.0.0.1:8088/#/addNewBusiness
+
+router:history模式以及hash
+
+关于run server的问题
+
+webpack.config配置项中直接 0.0.0.0默认。本机ip地址加上端口即可在本地局域网访问，
+
+如果是vue-cli，直接应该在package.json中默认配置
+
+```bash
+npm run serve
+"serve": "vue-cli-service serve",
+```
+
+## localStorage
+
+表达输入的友好型问题即是
+在一些需要选择的选项中用set存储数据，在下一次接口请求成功的时候将localStorage取出，填充。
+
+### 联动picker选择
+
+mint-ui // better-scroll
+
+### 关于深入理解组件内容
