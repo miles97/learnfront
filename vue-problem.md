@@ -116,3 +116,229 @@ npm run serve
 mint-ui // better-scroll
 
 ### 关于深入理解组件内容
+
+### Vue-echarts踩坑手册
+
+首先关于渐变色
+
+渐变色需要引入一个东西
+new echarts.graphic.LinearGradient()
+如果直接使用是会报错误的
+
+[areaStyle参数说明](https://echarts.baidu.com/option.html#series-line.areaStyle.color)
+
+在vue中的使用，需要一系列之前的内容，详细的包括
+
+main.js声明
+
+import ECharts from 'vue-echarts/components/ECharts'
+Vue.component('chart', ECharts)
+
+页面内引入
+
+import ECharts from 'vue-echarts/components/ECharts.vue'
+import 'echarts/lib/component/tooltip'
+import 'echarts/lib/component/legend'
+import 'echarts/lib/chart/line'
+import echarts from 'echarts'
+
+方法中声明
+
+我写在了
+
+mounted(){
+	this.echarts = echarts
+
+}
+
+然后可以使用
+
+还有一点即是areaStyle.color是填充性质，如果没有放在areaStyle里面。默认的渐变选项即是线条的渐变色
+
+差别如下
+
+面积颜色填充
+areaStyle: {
+    type: 'default',
+    color: new echarts.graphic.LinearGradient(
+        0, 0, 0, 1,
+        [
+            {offset: 0, color: 'rgba(80,141,255,0.39)'},
+            {offset: 0.5, color: '#fff'},
+            {offset: 1, color: '#fff'}
+        ]
+    )
+},
+线条渐变色填充
+areaStyle: {
+    type: 'default',
+},
+color: new echarts.graphic.LinearGradient(
+    0, 0, 0, 1,
+    [
+        {offset: 0, color: 'rgba(80,141,255,0.39)'},
+        {offset: 1, color: 'rgba(38,197,254,0.00)'}
+    ]
+)
+#### 完整的vue-echarts配置代码
+```
+this.orgOptions = {
+                tooltip: {
+                    trigger: 'axis'
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        mark: {show: true},
+                        dataView: {show: true, readOnly: false},
+                        magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['02/07', '02/08', '02/10', '02/12', '02/15', '02/17', '02/20', '02/22', '02/25', '02/28', '03/01', '03/03', '03/05', '03/07', '03/10'],
+                    axisLabel: {interval: 1},   //控制隐藏x轴坐标
+                    axisLine: {lineStyle: {color: '#ccc'}}
+                },
+                yAxis: {type: 'value', axisLine: {lineStyle: {color: '#ccc'}}, axisTick: {show: false}},
+                series: [
+                    {
+                        symbol: "none",
+                        type: 'line',
+                        data: [5, 3, 6, 8, 9, 3, 2, 3, 4, 6, 8, 9, 3, 4, 5],
+                        smooth: true,
+                        color: 'rgb(80,141,255)',
+                        itemStyle: {
+                            normal: {
+                                areaStyle: {
+                                    type: 'default',
+                                    color: new echarts.graphic.LinearGradient(
+                                        0, 0, 0, 1,
+                                        [
+                                            {offset: 0, color: 'rgba(80,141,255,0.39)'},
+                                            {offset: 0.5, color: '#fff'},
+                                            {offset: 1, color: '#fff'}
+                                        ]
+                                    )
+                                },
+
+                            }
+                        },
+                        name: 'demo1'
+                    },
+                    {
+                        symbol: "none",
+                        type: 'line',
+                        data: [4, 5, 3, 2, 4, 5, 4, 3, 5, 3, 2, 4, 5, 4, 3],
+                        smooth: true,
+                        itemStyle: {
+                            normal: {
+                                areaStyle: {
+                                    type: 'default',
+                                },
+                                color: new echarts.graphic.LinearGradient(
+                                    0, 0, 0, 1,
+                                    [
+                                        {offset: 0, color: 'rgba(80,141,255,0.39)'},
+                                        {offset: 1, color: 'rgba(38,197,254,0.00)'}
+                                    ]
+                                )
+                            }
+                        },
+                        name: 'demo2'
+                    },
+                    {
+                        symbol: "none",
+                        type: 'line',
+                        data: [4, 3, 4, 3, 3, 8, 7, 6, 3, 4, 3, 3, 8, 7, 6],
+                        smooth: true,
+                        itemStyle: {
+                            normal: {
+                                areaStyle: {
+                                    type: 'default', color: new echarts.graphic.LinearGradient(
+                                        0, 0, 0, 1,
+                                        [
+                                            {offset: 0, color: 'rgba(80,141,255,0.39)'},
+                                            {offset: 1, color: 'rgba(38,197,254,0.00)'}
+                                        ]
+                                    )
+                                }
+                            },
+                        },
+                        name: 'demo3'
+                    },
+                    {
+                        symbol: "none",
+                        type: 'line',
+                        color: 'yellow',
+                        data: [4, 2, 3, 4, 8, 3, 5, 8, 4, 5, 4, 8, 3, 5, 8],
+                        smooth: true,
+                        itemStyle: {
+                            normal: {
+                                areaStyle: {
+                                    type: 'default', color: new echarts.graphic.LinearGradient(
+                                        0, 0, 0, 1,
+                                        [
+                                            {offset: 0, color: '#fff'},
+                                            {offset: 1, color: '#fff'}
+                                        ]
+                                    )
+                                }
+                            },
+                        },
+                        name: 'demo4'
+                    },
+                ]
+            };
+```
+
+Echarts配置
+
+详细配置
+https://echarts.baidu.com/option.html#series-line.itemStyle.borderType
+
+example
+
+https://echarts.baidu.com/echarts2/doc/example.html
+
+https://echarts.baidu.com/examples/
+
+CSDN教程
+https://blog.csdn.net/sleepwalker_1992/article/details/82709793
+
+
+### Echarts全屏模式
+
+点击缩放按钮，全屏显示
+
+横纵向布局的设置，一般在『组件』或者『系列』的 orient 或者 layout 配置项上，设置为 'horizontal' 或者 'vertical'
+
+1. echarts横向渲染，不改变div
+
+
+2. div tranform:ratote(90deg)
+
+直接旋转90度，通过position等定位重新拉回来页面
+
+3. 直接通过x轴和y轴的相关设置进行
+
+参考
+https://blog.csdn.net/qq_40594137/article/details/80896631
+
+。。。。toolTips并不能旋转
+
+4. 通过嵌套iframe，然后引入进行旋转
+
+
+
+### Echarts数据展示
+
+因为echarts4z之后引入的dataset模式，使用回调函数或者字符串进行输入的带入
+
+
+
+
+
