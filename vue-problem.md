@@ -366,11 +366,25 @@ that.slots[1].values=that.cityList[data.data[0].province];
 如果页面样式不一致，仍然上，实际上需要复用的组件只是popup的部分，
 所以需要分辨实际用处部分，然后再通过这些内容进行交互(实际上Api已经说明了slots的使用方法)
 
-### ???
+### 关于组件化的内容
 写一个组件的具体系统化思维
 
 getValue   getDefalut 等等重复的逻辑
 
 mounted create等生命周期的含义
 
-组件！！？？
+关于mounted和created的差别，mounted是在模板渲染完成之后的周期，而created是在模板渲染之前的
+所以涉及到dom操作的防范写在mounted内，其他基本写在created内，类似于onload
+
+在自己倒腾了好几周的组件中，还是觉得自己的时间以及认知水平不足以支撑自己完成一个组件，至今也没有做出来日期组件，省市两级联动的组件，还有echarts的动态加载也没完成。
+
+emmmm
+在这几天闲里偷忙的时间，做一些codereview，提升自己代码水平，观察同事的代码
+
+初步发现自己的布局方面还是存在很大的问题，特别是对于一些position,display和float。
+
+还有flex的理解真的不是很深刻
+
+### Vue组件技术栈
+
+vue-photo-preview  //图片预览加载 mounted() {this.previewRefresh(); },
