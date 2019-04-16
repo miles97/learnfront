@@ -388,3 +388,15 @@ emmmm
 ### Vue组件技术栈
 
 vue-photo-preview  //图片预览加载 mounted() {this.previewRefresh(); },
+
+还有个问题即是  我怎么就没用到emit,等等的功能vue store
+
+
+
+### Vue特殊含义小结
+
+```
+this.$refs[item.ref].$el.classList.add('clue-fail-dd');
+
+
+```
