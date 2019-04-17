@@ -17,9 +17,30 @@ merge或者 push之前研究参数以及名称的细节问题
 
 所以重构的考量好像要比新项目更复杂
 
-目前的问题卡在日期选择组件的应用   echarts数据的导入 以及 scroll-x 表单和样式的调整问题，还有切换页面，直接切换不同的页面还是重新加载不同的图表和 数据
+目前的问题卡在日期选择组件的应用   echarts数据的导入 以及 scroll-x 表单和样式的调整问题，还有切换页面，直接切换不同的页面还是重新加载不同的图表和数据
 
-对于使用过一次的技术，自己还是印象不深刻，造成了很多时间的浪费，在之后KPI考核的标准下，还是应该自己捡起来猥琐发育才行
+### Vue-echarts数据填充问题
+
+在接口成功之后处理数据  
+当下的问题是如何动态刷新echats的数据，使得重新加载并且拿到数据
+
+this.chart.setOption(this.orgOptions)
+
+然后对于不同的图表数据，进行不同层次的独立封装，每个函数回调相应配置参数
+getBarCharts(){
+    return {
+        legeng:{},
+        series:{},
+        …………
+    }
+}
+
+然后在trigger方法中
+this.orgOptions=this.getBarCharts();
+this.chart.setOption(this.orgOptions);
+
+初步完成charts的init
+
 
 ## 扫盲篇
 
