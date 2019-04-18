@@ -421,3 +421,22 @@ this.$refs[item.ref].$el.classList.add('clue-fail-dd');
 
 
 ```
+
+### 生命周期问题以及const全局声明存在的逻辑问题
+
+在函数生命周期的中
+```
+
+created(){
+
+const name = this.$route.query.type //或者type的路由参数
+通过传递的参数切换页面以及显示不同的内容
+同时页面内也有一个trigger，通过event事件，判断innertext，然后切换页面
+
+}
+```
+isAcive=[false,false,fasel]
+
+isActive[index]=!isActive[index]  //存在的问题
+
+视图更新的相关因素
