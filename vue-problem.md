@@ -440,3 +440,10 @@ isAcive=[false,false,fasel]
 isActive[index]=!isActive[index]  //存在的问题
 
 视图更新的相关因素
+
+### 需求解析
+
+就是动态切换  删除，添加数组元素 
+
+然后进行echarts的x轴坐标影响
+
