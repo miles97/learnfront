@@ -447,3 +447,26 @@ isActive[index]=!isActive[index]  //存在的问题
 
 然后进行echarts的x轴坐标影响
 
+基本上就是通过一个选中数组来动态展示选中与否
+
+删除元素的同时请求charts数据，重新加载charts
+
+添加元素亦同，核心思想就是数组的处理以及拷贝一个数组作为item[index]的添加元素
+
+后续遇到的问题核心就是处理数组的时候出现了setData较慢于其他操作
+
+所以造成页面charts刷新不成功
+
+getData =>  preesDown => getCharts
+
+变成了 2 => 3  => 1
+
+目前的排查原因可能是get Data中的数组元素处理耗时或者进程
+```
+async created() {
+    await this.getList();
+}
+```
+
+异步加载。。。
+
