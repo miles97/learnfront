@@ -468,5 +468,7 @@ async created() {
 }
 ```
 
-异步加载。。。
+目前还没找出原因，因为后台接口还没通，所以通过getFakeData时set进Data(){}
+
+
 
