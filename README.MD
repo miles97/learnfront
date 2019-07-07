@@ -1,4 +1,4 @@
-﻿# Html5+CSS(基于bootstrap)
+﻿# Html5+CSS
 <br> 
 <br> 
 ## 目前的学习路线大概是从Bootstrap开始，学习主要的设计思路以及响应式布局思想。
