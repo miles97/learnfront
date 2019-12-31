@@ -46,5 +46,6 @@
 
 原生H5,JS,CSS => 一点点JQ => 小程序 => vue技术栈的深度体验 =>  uniapp，使用vue开发微信小程序 => RN/React
 
+接下来打算实践一下node.js,Fultter,React-native以及golang相关。从前端服务入手进行工作梳理。
 
 ```
