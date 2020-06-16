@@ -43,6 +43,18 @@
 
 接下来打算实践一下node.js,Fultter,React-native以及golang相关。从前端服务入手进行工作梳理
 
+```
 
+## React日常
 
+JSX使用的语法糖编辑成JS即是创建组件的方法,每个 JSX 元素只是调用 React.createElement(component, props, ...children) 的语法糖。
+在JS中直接
+let e = React.creatComponents;
+```js
+const e = React.createElement;
+
+ReactDOM.render(
+  e('div', null, 'Hello World'),
+  document.getElementById('root')
+);
 ```
