@@ -52,4 +52,3 @@ ReactDOM.render(
 ```
 ### vue日常
 
-关于react使用方面实践可能偏向更多的还是内容相关
